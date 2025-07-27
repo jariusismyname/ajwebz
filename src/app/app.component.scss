@@ -1,50 +1,94 @@
 .love-story {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  
+  background-color: #cc3366;
 
   .section {
     padding: 4rem 2rem;
-    border-bottom: 1px solid #eaeaea;
-
+    border-bottom: 1px solid #111010;
+    margin: -20px 0;
     h2 {
       font-size: 2rem;
       text-align: center;
       margin-bottom: 1.5rem;
     }
 
-    &.intro {
-      background: linear-gradient(to right, #ffe4ec, #fff7f9);
+     &.intro {
+    background: linear-gradient(to right, #ffe4f6, #fff7f9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    margin-top: 80px;
+
+    .content {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      text-align: center;
+
+      img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #cc3366;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-style: italic;
+        color: #555;
+        max-width: 600px;
+      }
+    }
+
+    // 📱 Responsive adjustments
+    @media (max-width: 768px) {
+      margin-top: 60px;
+      padding: 2rem 1rem;
 
       .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
         img {
-          width: 180px;
-          height: 180px;
-          border-radius: 50%;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-          margin-bottom: 1rem;
+          width: 120px;
+          height: 120px;
         }
 
         h1 {
-          font-size: 2.5rem;
-          color: #cc3366;
+          font-size: 1.8rem;
         }
 
         p {
-          font-style: italic;
-          color: #555;
-          text-align: center;
-          max-width: 600px;
+          font-size: 0.95rem;
         }
       }
     }
+
+    @media (max-width: 480px) {
+      margin-top: 40px;
+      padding: 1.5rem 1rem;
+
+      .content {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 
     &.memories {
       background-color: #fafafa;
@@ -182,22 +226,62 @@
 }
 
 
+//cover photo
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: lightblue;
+  height: 80px; // default desktop height
+
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    height: 60px; // ⬅️ Smaller height for mobile
+    padding: 0.25rem 0.75rem;
+
+    .logo {
+      width: 50px;
+    }
+  }
+ 
 
 
-.place-we-stood {
-  background-image: url('../assets/yanna.jpg');
+  //2nd section
+ .place-we-stood {
+  background-image: url('../assets/cover.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+background-color: #181414;
+  .section-header {
+    margin-bottom: 1rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #282021;
+    }
+  }
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.5); // Dark overlay
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
@@ -207,7 +291,7 @@
       font-size: 2.5rem;
       margin-bottom: 1rem;
       font-weight: bold;
-      color: #ffdde1;
+      color: #181414;
     }
 
     p {
@@ -231,7 +315,12 @@
         font-size: 1rem;
       }
     }
+
+    .section-header h1 {
+      font-size: 1.5rem;
+    }
   }
+}
 
 
   //scroll effect
