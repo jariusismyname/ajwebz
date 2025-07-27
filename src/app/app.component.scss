@@ -1,0 +1,323 @@
+.love-story {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  
+
+  .section {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #eaeaea;
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    &.intro {
+      background: linear-gradient(to right, #ffe4ec, #fff7f9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          margin-bottom: 1rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+          color: #cc3366;
+        }
+
+        p {
+          font-style: italic;
+          color: #555;
+          text-align: center;
+          max-width: 600px;
+        }
+      }
+    }
+
+    &.memories {
+      background-color: #fafafa;
+
+      .gallery {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+
+        img {
+          width: 220px;
+          height: 150px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    &.music {
+      background: #f0f4ff;
+
+      .albums {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        .album {
+          text-align: center;
+
+          img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            border: 3px solid #4466ff;
+          }
+
+          p {
+            margin-top: 0.5rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &.never-forget {
+      background: #fff3f0;
+
+      .timeline {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          span {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+          }
+
+          img {
+            width: 180px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+    &.what-i-miss {
+      background: linear-gradient(to bottom, #ffe7e7, #fff);
+      text-align: center;
+
+      .letter {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: 'Georgia', serif;
+        font-style: italic;
+        color: #444;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &.message {
+      background: #eef6f9;
+
+      .speech-bubble {
+        background: #fff;
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        font-style: italic;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-width: 10px;
+          border-style: solid;
+          border-color: #fff transparent transparent transparent;
+        }
+      }
+    }
+
+    &.let-go {
+      background: #fef4e0;
+      text-align: center;
+
+      .sunset {
+        img {
+          width: 100%;
+          max-width: 600px;
+          border-radius: 20px;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-weight: 600;
+          color: #cc6600;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.place-we-stood {
+  background-image: url('../assets/yanna.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); // Dark overlay
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #ffdde1;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 60vh;
+
+    .overlay {
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+
+  //scroll effect
+
+  @media (max-width: 480px) {
+    height: 50vh;
+    background-position: top center;
+
+    .overlay {
+      padding: 1rem;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+// Fade-in and slide-up animation
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: fadeSlideUp 1.5s ease forwards;
+  }
+}
+
+
+//new effect
+@keyframes zoomFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scroll-zoom {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+
+  &.visible {
+    animation: zoomFadeIn 1.5s ease-out forwards;
+  }
+}
+
+
+//new effect
+@keyframes flipInLeft {
+  0% {
+    opacity: 0;
+    transform: perspective(800px) rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateY(0);
+  }
+}
+
+.scroll-flip {
+  opacity: 0;
+  transform: perspective(800px) rotateY(-90deg);
+  transform-style: preserve-3d;
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+
+  &.visible {
+    animation: flipInLeft 1.5s ease forwards;
+  }
+}
