@@ -68,7 +68,7 @@
     }
 
     @media (max-width: 480px) {
-      margin-top: 60px;
+      margin-top: 60px;   //dito ka natagalan
       padding: 1.5rem 1rem;
 
       .content {
@@ -241,6 +241,7 @@
 
   @media (max-width: 768px) {
      padding: 0.25rem 0.75rem;
+   width: 94%;
 
     .logo {
       width: 50px;
